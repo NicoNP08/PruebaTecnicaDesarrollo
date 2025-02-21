@@ -88,21 +88,6 @@ export function RoomsProvider({children}) {
         }
     }
 
-    // // Función para obtener salas ocupadas
-    // const fetchOccupiedRooms = async () => {
-    //     try {
-    //         setLoadingRooms(true);
-    //         setRoomsError(null);
-    //         const res = await getOccupiedRooms();
-    //         console.log("Respuesta de la API:", res.data); // 🔍 Verifica qué devuelve la API
-    //         setOccupiedRooms(res.data);
-    //     } catch (error) {
-    //         console.error("Error al obtener salas ocupadas:", error);
-    //         setRoomsError("Error fetching occupied rooms");
-    //     } finally {
-    //         setLoadingRooms(false);
-    //     }
-    // };
 
     return (
         <RoomsContext.Provider value={{
@@ -113,10 +98,6 @@ export function RoomsProvider({children}) {
             getRoom,
             updateRoom,
             getAllRooms
-            // occupiedRooms,
-            //                 fetchOccupiedRooms,
-            //                 loadingRooms,
-            //                 roomsError,
             }}>
             {children}
         </RoomsContext.Provider>

@@ -20,11 +20,7 @@ function RegisterPage(){
             }
         }
     }, [isAuth, user, navigate]);
-
-    // useEffect(() => {
-    //     if(isAuth) navigate('/rooms')
-    //   }, [isAuth])
-    
+  
     const onSubmit=handleSubmit(async (values) => {
         signup(values)
     })

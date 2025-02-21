@@ -1,5 +1,4 @@
 import Rooms from "../models/rooms.model.js";
-import User from "../models/user.model.js";
 
 export const getRooms = async (req, res) => {
     try {
@@ -10,19 +9,6 @@ export const getRooms = async (req, res) => {
     }
 };
 
-// export const getRooms = async (req, res) => {
-//     try {
-//         const { month } = req.query;
-
-
-//         const rooms = await Rooms.find(query).populate("user");
-//         res.json(rooms);
-//     } catch (error) {
-//         return res.status(500).json({ message: "Something went wrong" });
-//     }
-// };
-
-// en caso de que necesite crear para un usuario que vea todas las tareas
 export const getAllRooms = async (req, res) => {
     const rooms = await Rooms.find()
     res.json(rooms)
@@ -82,7 +68,6 @@ export const updateRooms = async (req, res) => {
     try {
         const { startDate, endDate } = req.body;
 
-        // Si startDate o endDate están presentes, los convertimos a Date
         if (startDate) req.body.startDate = new Date(startDate);
         if (endDate) req.body.endDate = new Date(endDate);
 
