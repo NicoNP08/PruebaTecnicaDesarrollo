@@ -6,7 +6,6 @@ import { AuthProvider } from "./context/AuthContext";
 import RoomsPage from './pages/RoomsPage';
 import RoomsFormPage from './pages/RoomsFormPage';
 import ProfilePage from './pages/ProfilePage';
-import HomePage from './pages/HomePage';
 import ProtectedRoute from './ProtectedRoute';
 import { RoomsProvider } from './context/RoomsContext';
 import Navbar from './components/Navbar';
@@ -16,10 +15,10 @@ function App() {
     <AuthProvider>
       <RoomsProvider>
         <BrowserRouter>
-          <main className='container mx-auto px-10'>
+          <main className=' w-full'>
             <Navbar />
               <Routes>
-                <Route path='/' element={<HomePage />}></Route>
+                <Route path='/' element={<LoginPage />}></Route>
                 <Route path='/login' element={<LoginPage />}></Route>
                 <Route path='/register' element={<RegisterPage />}></Route>
 

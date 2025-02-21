@@ -8,7 +8,6 @@ function CalendarComp ({events}){
     const localizer = dayjsLocalizer(dayjs)
     const { getRooms, getAllRooms } = useRooms(); // Función para obtener las tareas desde el backend
     const [eventList, setEventList] = useState()
-    console.log(eventList, 'cosas events')
     
     useEffect(() => {
         const map = events.map(room => ({
@@ -17,7 +16,6 @@ function CalendarComp ({events}){
             start: new Date(room.startDate),
             end: new Date(room.endDate),
         }));
-        console.log(map, 'primer events')
         setEventList(map)
     
     

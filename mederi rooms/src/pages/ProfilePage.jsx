@@ -13,12 +13,12 @@ function ProfilePage() {
     if (loadingRooms) return <p>Cargando salas ocupadas...</p>;
     if (roomsError) return <p>Error: {roomsError}</p>;
     return(
-        <div className="w-full">
+        <div className="w-full mx-10">
             <h1 className="text-2xl font-bold py-2">Gestion de Reuniones</h1>
-            <div className=" w-full p-10 rounded-md flex justify-between">
+            <div className=" p-10 flex gap-x-80 mx-1">
                 <ul className="gap-2 flex flex-col">
                     {rooms.map((room) => (
-                        <li key={room._id} className="flex flex-col gap-x-2 justify-between bg-[#f05a03] text-black p-2 rounded">
+                        <li key={room._id} className="flex flex-col justify-between bg-[#f05a03] text-black p-2 rounded ">
                             <p>
                                 Titulo: {room.title}
                             </p> 

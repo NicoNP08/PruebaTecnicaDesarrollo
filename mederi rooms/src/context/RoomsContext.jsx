@@ -14,10 +14,6 @@ export const useRooms = () => {
 
 export function RoomsProvider({children}) {
     const [rooms, setRooms] = useState([])
-    // //
-    // const [occupiedRooms, setOccupiedRooms] = useState([]);
-    // const [loadingRooms, setLoadingRooms] = useState(false);
-    // const [roomsError, setRoomsError] = useState(null);
 
     const createRooms = async (room) => {
         try {
@@ -32,25 +28,16 @@ export function RoomsProvider({children}) {
         }
     }
 
-    // const getRooms = async () => {
-    //     try {
-    //         const res = await getRoomsRequest()
-    //         if (Array.isArray(res.data)) {
-    //         setRooms(res.data)
-    //     } else {
-    //         console.error("API did not return an array:", res.data);
-    //         setRooms([]); 
-    //     }
-    // } catch (error) {
-    //     console.error("Error fetching rooms:", error);
-    //     setRooms([]); 
-    // }
-    // }
-
-    const getRooms = async () => {
+    const getRooms = async (id) => {
         try {
             const res = await getRoomsRequest();
             if (Array.isArray(res.data)) {
+                if(id){
+                    const filter = res.data.filter((room) => room.user._id === id)
+
+                    setRooms(filter)
+                    return res.data
+                }
                 setRooms(res.data);
                 return res.data; 
             } else {
