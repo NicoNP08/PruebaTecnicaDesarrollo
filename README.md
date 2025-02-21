@@ -38,6 +38,6 @@ Es necesario de las variables de entorno para el funcionamiento
 - React
 - Vite
 - Express
-- Tailwind CSS / Styled Components (si aplica)
+- Tailwind CSS / Styled Components
 - Axios
 - MongoDB
