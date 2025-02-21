@@ -24,7 +24,7 @@ function Navbar() {
                     </li>
                 </>
             ): (
-                <div>
+                <div className='flex w-full gap-x-10'>
                     <li>
                         <Link to='/login' className='bg-[#f57931] p-3 rounded-sm'>Login</Link>
                     </li>
