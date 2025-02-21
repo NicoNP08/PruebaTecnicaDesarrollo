@@ -18,8 +18,8 @@ function RoomsPage() {
     if(rooms.length === 0) return (<h1>No rooms</h1>)
 
     return(
-        <div className="w-full flex">
-            <div className="flex grid-cols-3 gap-2">
+        <div className="w-4/5 justify-center flex gap-10">
+            <div className="flex gap-5">
                 {rooms.map((room) => (
                     <RoomsCard room={room} key={room._id}/>
                 ))}

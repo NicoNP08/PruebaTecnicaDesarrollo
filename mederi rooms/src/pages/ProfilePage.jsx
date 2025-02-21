@@ -27,7 +27,15 @@ function ProfilePage() {
                             </p>  
                             <p>
                                 Fecha de reunion: {room.startDate}
-                            </p>    
+                            </p>
+                            <div>
+                                <h2 className="text-lg font-semibold">Equipamiento:</h2>
+                                <ul className="list-disc list-inside">
+                                    {room.equipment?.map((item, index) => (
+                                        <li key={index} className="text-gray-700">{item}</li>
+                                    ))}
+                                </ul>
+                            </div>    
                         </li>
                     ))}
 
